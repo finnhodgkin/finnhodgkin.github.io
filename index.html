@@ -1,5 +1,5 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
@@ -12,30 +12,30 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
 <script type='text/javascript'>
-$(document).ready(function(){	
+$(document).ready(function(){
 	var i = 1;
 	var active = "";
 	var current = "";
-		
+
 	$('.image1').click(function(event) {
-		event.preventDefault();			
-		$(".timage").fadeIn(300).addClass('active-slide').addClass('timagec');		
+		event.preventDefault();
+		$(".timage").fadeIn(300).addClass('active-slide').addClass('timagec');
     });
 	$('.image2').click(function(event) {
-		event.preventDefault();			
-		$(".timage").fadeIn(300).addClass('active-slide').removeClass('timageb').removeClass('timagec').addClass('timagea');		
+		event.preventDefault();
+		$(".timage").fadeIn(300).addClass('active-slide').removeClass('timageb').removeClass('timagec').addClass('timagea');
     });
 	$('.image3').click(function(event) {
-		event.preventDefault();			
-		$(".timage").fadeIn(300).addClass('active-slide').removeClass('timagec').addClass('timageb');		
+		event.preventDefault();
+		$(".timage").fadeIn(300).addClass('active-slide').removeClass('timagec').addClass('timageb');
     });
 	$('.timage').on('click', function(){
-		$(".timage").fadeOut(300).removeClass('active-slide');		
+		$(".timage").fadeOut(300).removeClass('active-slide');
     });
-	
+
 	$('#wrapper a').bind('click', function(e){
 		current = $(this).attr("href");
-		
+
 		if($('#hiddenMobileTest').css('float') === 'left'){
 			if(active === current){
 				console.log(active, current);
@@ -47,11 +47,11 @@ $(document).ready(function(){
 			}
 		}
 		});
-	
+
 	});
-	
-	
-	
+
+
+
 $(window).on('load resize', function () {
     var div = $('.smallBox');
 	var div2 = $('.bigBox');
@@ -60,41 +60,41 @@ $(window).on('load resize', function () {
     var width = div.width();
 	var div3 = $('#wrapper');
     var marginL = div3.css('margin-left').replace("px", "");
-	var width3 = div4.width();	
-	var margin = marginL / 2;	
+	var width3 = div4.width();
+	var margin = marginL / 2;
 	var timageS = width*2;
-	
+
 	var getMargin = +div.css('margin-left').replace("px", "");
-	
+
 	div4.css('height', width3);
 	div3.css('marginTop', margin + "px");
-	div3.css('marginBottom', margin + "px");    
+	div3.css('marginBottom', margin + "px");
     div.css('height', width);
-	div2.css('height', width);	
+	div2.css('height', width);
 	timage.css('margin', getMargin + "px")
 	timage.css('height', ((width + getMargin)*2));
 	timage.css('width', ((width + getMargin)*2));
-	});	
-	
+	});
+
 </script>
 </head>
- 
+
 <body>
-	<div id="wrapper">	
-		
+	<div id="wrapper">
+
 		<div class="smallBox" style="background:url('images/LogoWhite.svg') center center no-repeat #d9dae9;background-size: 75% 75%;">
 			<div class="boxNoHover">
 				<div style="padding-top:50%;padding-top:50%;"></div>
-			</div>				
-		</div>		
+			</div>
+		</div>
 		<a href="DraftGIHome/GI-draft.html" target="_blank">
 			<div class="smallBox" class="smallBox" style="background:url('images/GI-Draft.jpg') center center no-repeat #d9dae9; background-size: 124% 124%;">
-				<div class="boxHover"></div>				
+				<div class="boxHover"></div>
 				<div class="textLine lineLeft"></div>
 				<div class="textSlide slideLeft"><h3 style="color:#ec008c;">Global Initiative</h3>2016<br/><br/>First draft pre-code redesign of the Global Initiative website.</div>
 			</div>
-		</a>	
-				
+		</a>
+
 		<a href="http://www.kevinhope.co.uk/" target="_blank">
 			<div class="bigBox" style="background:url('images/kevin.jpg') center center no-repeat #fff;background-size: 100% 100%;">
 				<div class="boxHover"></div>
@@ -109,64 +109,64 @@ $(window).on('load resize', function () {
 					<div class="textLineBig" style="height:100%;"></div>
 					<div class="textSlideBig" style="height:90%;"><h3 style="color:#ec008c;">Interactive map</h3>2016<br/><br/>An interactive map of the world displaying the current status of the law on corporal punishment in every state and territory. <br/><br/>Design and implementation by Finn Hodgkin.</div>
 			</div>
-		</a>	
+		</a>
 		<div class="clearBig"></div>
 		<div class="imageBox">
 			<div class="timage">
 				<p class="closeTimage">click to close</p>
 			</div>
 		</div>
-		
-		<a href="http://www.rosasquith.co.uk/" target="_blank">	
-			<div class="smallBox" style="background:url('images/ros.jpg') center center no-repeat #d9dae9;background-size: 100%;">		
+
+		<a href="colourgame/colourgame.html" target="_blank">
+			<div class="smallBox" style="background:url('images/colourgame.jpg') center center no-repeat #d9dae9;background-size: 100%;">
 					<div class="boxHover"></div>
 					<div class="textLine lineCenter"></div>
-					<div class="textSlide slideCenter"><h3 style="color:#ec008c;">Ros Asquith</h3>2015<br/><br/>Migrated site to Wordpress. Full re-design currently in progress.</div>
+					<div class="textSlide slideCenter"><h3 style="color:#ec008c;">Javascript Colour Game</h3>2016<br/><br/>Reflex browser game created using JavaScript.</div>
 			</div>
 		</a>
 		<a href="https://www.instagram.com/finnstagram90/" target="_blank">
 			<div class="tinyBox" style="background:url('images/insta.png') center center no-repeat #d9dae9; background-size: 75% 75%;">
-				<div class="boxHover"></div>	
+				<div class="boxHover"></div>
 				<div class="textSlide slideTiny"><h3 style="text-align: center; color:#ec008c;"><br /><br />Instagram</h3></div>
-							
+
 			</div>
 		</a>
-		
-		
+
+
 		<a href="" class="image3">
 			<div class="tinyBox" style="background:url('images/al.jpg') center center no-repeat #d9dae9; background-size: 90% 90%;">
-				<div class="boxHover"></div>	
+				<div class="boxHover"></div>
 				<div class="textSlide slideTiny"><h3 style="text-align: center; color:#ec008c;"><br /><br />View</h3></div>
-				
+
 			</div>
 		</a>
 		<a href="http://codepen.io/finnhodgkin/" target="_blank">
 			<div class="tinyBox" style="background:url('images/codepen.png') center center no-repeat #d9dae9; background-size: 75% 75%;">
-				<div class="boxHover"></div>	
+				<div class="boxHover"></div>
 				<div class="textSlide slideTiny"><h3 style="text-align: center; color:#ec008c;"><br /><br />Codepen</h3></div>
-							
+
 			</div>
 		</a>
 		<a href="" class="image2">
 			<div class="tinyBox" style="background:url('images/morgan.jpg') center center no-repeat #d9dae9; background-size: 90% 90%;">
-				<div class="boxHover"></div>	
+				<div class="boxHover"></div>
 				<div class="textSlide slideTiny"><h3 style="text-align: center; color:#ec008c;"><br /><br />View</h3></div>
-				
+
 			</div>
 		</a>
-		
-		
+
+
 		<div class="clear"></div>
 		<a href="images/LeafletCAU.pdf" target="_blank">
 			<div class="smallBox" style="background:url('images/leaflet.jpg') center center no-repeat #d9dae9;background-size: 100% 100%;">
-				<div class="boxHover"></div>				
+				<div class="boxHover"></div>
 				<div class="textLine"></div>
 				<div class="textSlide"><h3 style="color:#fee900;">Children Are Unbeatable!</h3>2015<br/><br/>Recruitment leaflet for the Children Are Unbeatable! Alliance UK.</div>
 			</div>
 		</a>
 		<a href="images/GI-Evaluation.pdf" target="_blank">
 			<div class="smallBox" style="background:url('images/gi-evaluation.jpg') center center no-repeat #d9dae9;background-size: 100% 100%;">
-				<div class="boxHover"></div>				
+				<div class="boxHover"></div>
 				<div class="textLine lineRight"></div>
 				<div class="textSlide slideRight"><h3 style="color:#fee900;">Global Initiative</h3>2015<br/><br/>Sixty page evaluation report for the Global Initiative. Layout and design by Finn.</div>
 			</div>
@@ -180,39 +180,39 @@ $(window).on('load resize', function () {
 		</a>
 		<a href="https://www.prs-recruitment.net" target="_blank">
 			<div class="smallBox" style="background:url('images/PRS.jpg') center center no-repeat #d9dae9;background-size: 124% 124%;">
-					<div class="boxHover"></div>	
+					<div class="boxHover"></div>
 					<div class="textLine"></div>
 					<div class="textSlide"><h3 style="color:#ec008c;">PRS Recruitment</h3>2013<br/><br/>Wordpress re-design for an early years recruitment agency.</div>
 			</div>
 		</a>
 		<a href="https://www.youtube.com/watch?v=R2-qhU2snUc" target="_blank">
 			<div class="smallBox" class="smallBox" style="background:url('images/rigging.jpg') center center no-repeat #d9dae9; background-size: 124% 124%;">
-				<div class="boxHover"></div>				
+				<div class="boxHover"></div>
 				<div class="textLine lineRight"></div>
 				<div class="textSlide slideRight"><h3 style="color:#00aeef;">Rigging reel</h3>2012<br/><br/>Reel of rigging work in Maya.</div>
 			</div>
-		</a>		
+		</a>
 		<a href="http://www.childrenareunbeatable.org.uk/" class="touch" target="_blank">
 			<div class="smallBox" style="background:url('images/CAU.png') center center no-repeat #d9dae9;background-size: 60% 60%;">
-				<div class="boxHover"></div>				
+				<div class="boxHover"></div>
 				<div class="textLine"></div>
 				<div class="textSlide"><h3 style="color:#ec008c;">Children Are Unbeatable!</h3>2015<br/><br/>Responsive website and logo design for an anti-smacking charity based in the UK.</div>
 			</div>
-		</a>		
+		</a>
 		<a href="images/FinnHodgkin-CV-2016.pdf" class="touch" target="_blank">
 			<div class="smallBox" style="background:url('images/CV.png') center center no-repeat #d9dae9;background-size: 60% 60%;">
-				<div class="boxHover"></div>				
+				<div class="boxHover"></div>
 				<div class="textLine lineRight"></div>
 				<div class="textSlide slideRight"><h3 style="color:#fee900;">CV</h3>2016<br/><br/>Up to date PDF with information on Finn's employment and education history.</div>
 			</div>
 		</a>
-		
+
 		<div class="clear"></div>
 		<div id="hiddenMobileTest"></div>
-		
+
 	</div>
-	
+
 	<div class="testing"></div>
-	
+
 </body>
 </html>
