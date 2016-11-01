@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Global Initiative to End All Corporal Punishment of Children | Interactive Map of the World</title>
+	<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="raphael-2.1.0.min.js"></script>
+	<script type="text/javascript" src="kartograph.js"></script>
+	<script type="text/javascript" src="jquery-ui.min.js"></script>
+   
+	<link rel="stylesheet" type="text/css" href="jquery.ui.min.css">
+	<link rel="stylesheet" type="text/css" href="jquery.qtip.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="jquery.qtip.min.js"></script>	
+	<script type="text/javascript" src="raphael.pan-zoom.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="jquery.ui.touch-punch.min.css">
+</head>
+<body style="background-color:#f1fbff;">
+	<div id="topBar"><div id="title">The Global Initiative to End All Corporal Punishment of Children</div><div id="return"><a href="javascript:history.back()">Return to previous page</a></div></div>	
+	<div id="controls"><a id="up" href="javascript:;">+</a><a id="down" href="javascript:;">-</a></div>
+	<div id="map"></div>
+	<div id="key">
+		<h1><i>The Global Initiative to</i></h1>
+		<div id="subtitle">End All Corporal Punishment of Children</div>
+		<div id="description">Click any state to view the full report.</div>
+		
+		<div id="keys">
+			<div id="keyColors">
+				<div class = "keybox" style="background-color:#4dca73;"></div>
+				<div class = "keybox" style="background-color:#4facd3;"></div>
+				<div class = "keybox" style="background-color:#e5d977;"></div>
+				<div class = "keybox"></div>
+			</div>
+			<div class = "keytext">Prohibited in all settings.<br/>Government committed to full prohibition.<br/>Prohibited in some settings.<br/>Not fully prohibited in any setting.</div>
+		</div>
+	</div>
+	
+<script type="text/javascript">
+
+
+
+$(function() {  
+		var map,
+			corPun = {};
+			
+        $.fn.qtip.defaults.style.classes = 'ui-tooltip-bootstrap';
+        $.fn.qtip.defaults.style.def = false;
+		
+		$( "#key" ).draggable();
+		
+		$.getJSON('corPun.json', function(corPun){
+		
+			$.get('map.svg', function(svg){
+			
+				var map = kartograph.map('#map');
+				
+				map.setMap(svg);
+				
+				map.addLayer('countries', {
+					styles: {
+                            'stroke-width': 0.4,
+							fill: function(d){if(corPun[d.id]){
+									switch(corPun[d.id].punishment) {
+										case "0":
+											return '#e67272';
+											break;
+										case "1":
+											return '#e5d977';
+											break;
+										case "2":
+											return '#4facd3';
+											break;
+										case "3":
+											return '#4dca73';
+											break;
+										default:
+											return '#f9f9f9';
+									}}
+									else{return '#f9f9f9';}
+								},
+								stroke: '#3a4c61'
+					},
+					tooltips: function(d) {
+							var text = "";
+							if(corPun[d.id]){
+								switch(corPun[d.id].punishment){
+									case "0":
+										text = "<b>Not fully prohibited in any setting.</b><br/>";
+										break;
+									case "1":
+										text = "<b>Prohibited in some settings.</b><br/>";
+										break;
+									case "2":
+										text = "<b>Government committed to full prohibition.</b><br/>";
+										break;
+									case "3":
+										text = "<b>Prohibited in all settings.</b><br/>";
+										break;		
+									default:
+										text = "No data available<br/>";					
+								}
+								if(corPun[d.id].sovereignty){text = text + "<b>Sovereignty:</b> " + corPun[d.id].sovereignty + "<br/>";}
+								if(corPun[d.id].date){text = text + "<b>Full prohibition achieved:</b> " + corPun[d.id].date + "<br/>";}
+								if(corPun[d.id].status){text = text + "<b>Prohibition still to be achieved:</b> <br/>" + corPun[d.id].status + "<br/>";}
+								if(corPun[d.id].childpop){text = text + "<b>Child population:</b> " + corPun[d.id].childpop;}
+							}							
+                            if(corPun[d.id]){return [corPun[d.id].name, text]}
+							else{return [d.id, "No data available"]};
+                    },
+					click: function(d){
+							if(corPun[d.id] && corPun[d.id].link){window.location = "http://www.endcorporalpunishment.org/progress/country-reports/" + corPun[d.id].link + ".html";}
+					}
+				});
+				var panZoom = map.paper.panzoom({ initialZoom: 0, initialPosition: { x: 0, y: 0} });
+				panZoom.enable();
+				
+				$("#up").click(function (e) {
+					panZoom.zoomIn(1);
+					e.preventDefault();
+				});
+
+				$("#down").click(function (e) {
+					panZoom.zoomOut(1);
+					e.preventDefault();
+				});
+			});			
+		});
+		
+		$("#key").css("margin-top","-200px");		
+		
+});
+
+
+</script>
+</body> 
+</html>

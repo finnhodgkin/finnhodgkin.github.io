@@ -1,0 +1,123 @@
+body{
+  background-color: white;
+  font-family: 'Roboto';
+  color: black;
+  text-align: center;
+  margin-top: 100px;
+  padding-bottom: 100px;
+}
+h1{
+  font-size: 50px;
+}
+.searchBox{
+    width: 50px;
+    height: 44px;
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+    padding-top: 6px;
+    border-radius: 25px;
+    float: left;
+    margin-left: -52px;
+    margin-top: 2px;
+    color: black;
+
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.hide{
+  margin-right: -3px;
+  color: white;
+
+  transform: rotate(360deg);
+}
+.searchBar{
+    width: 50px;
+    height: 50px;
+    border: solid 2px black;
+    border-radius: 27px;
+    margin: 0;
+    float: left;
+
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+.searchBarActive{
+  width: 300px;
+}
+input[type=text] {
+    background-color: transparent;
+    width: 0px;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-size: 17px;
+    margin-left: 18px;
+    margin-top: 13px;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    outline: 0;
+}
+input[type=text]:focus {
+width: 260px;
+}
+
+.searchWrapper{
+    width: 54px;
+    height: 50px;
+    margin: 100px auto 120px auto;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+#random{
+  margin-top: -100px;
+  margin-bottom: 80px;
+  height: 20px;
+  display: none;
+}
+
+.searchWrapperActive{
+  width: 304px;
+}
+
+#resultsWrapper{
+  margin: 0 auto;
+  width: 100%;
+  max-width: 750px;
+}
+.results{
+  padding: 30px;
+  border: 1px solid black;
+  border-radius: 8px;
+  text-align: left;
+  margin-bottom: 30px;
+    color: black;
+
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.results:hover{
+  color: white;
+  background-color: black;
+}
+a{text-decoration: none; color: black;}
+h2{padding: 0;margin:0 0 20px 0;}
+
+@media only screen and (max-width: 569px) {
+    .searchWrapper {
+        width: 304px !important;
+    }
+    .searchBar{
+        width: 300px;
+    }
+    .searchBox{
+        margin-right: -3px;
+        color: white;
+        transform: rotate(360deg);
+    }
+    input[type=text]{
+      width: 260px;
+    }
+}

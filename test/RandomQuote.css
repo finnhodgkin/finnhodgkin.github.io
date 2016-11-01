@@ -1,0 +1,92 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+.machine{
+  overflow:hidden;
+  width: 800px;
+  height: 800px;
+  margin: 0 auto;
+}
+.wheel{
+  width: 800px;
+  height: 800px;
+  border-radius: 50%;
+  background-image: url("http://finn-hodgkin-design.appspot.com/test/engine.png");
+  background-size: 100%;
+  z-index: 1;
+
+  margin: 0 auto;
+
+
+  -webkit-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+.screen{
+  font-family: monospace;
+  color: #c3ffbe;
+  font-size: 18px;
+  background-image:url("http://finn-hodgkin-design.appspot.com/test/screen.png");
+  background-size: 100%;
+  overflow: hidden;
+
+  margin: -345px auto 0 auto;
+
+  width: 500px;
+  height: 355px;
+  z-index: 15;
+
+-webkit-transform: translate3d(0,0,0);
+transform: translate3d(0,0,0);
+}
+.text{
+  width: 295px;
+  height: 200px;
+
+  margin-top: 76px;
+  margin-left: 76px;
+
+  overflow: hidden;
+}
+.right{
+  text-align: right;
+}
+.small{
+  font-size: 12px;
+  text-align: right;
+}
+.button{
+  height: 30px;
+  width: 30px;
+  background-image: url("http://finn-hodgkin-design.appspot.com/test/button.png");
+  background-size: 100%;
+  border-radius: 50%;
+  margin: -15px 0px 0px 430px;
+  cursor: pointer;
+}
+.buttonTwitter{
+  height: 24px;
+  width: 24px;
+  background-image: url("http://finn-hodgkin-design.appspot.com/test/buttonTwitter.png");
+  background-size: 100%;
+  border-radius: 50%;
+  margin: -77px 0px 0px 432px;
+  cursor: pointer;
+}
+.glow{
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  margin: -563px auto 0 auto;
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,-1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  z-index: 1;
+  background-color: white;
+}
+.glowing{
+  box-shadow:  0 0 205px white, 0 0 155px #dffeff, 0 0 105px #dffeff;
+}

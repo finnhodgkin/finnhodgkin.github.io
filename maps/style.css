@@ -1,0 +1,146 @@
+/*
+Style Name: GI Interactive Map
+Author: Finn Hodgkin
+*/
+body{
+	font-family: 'Lucida Grande', sans-serif;
+	padding: 0px;
+	margin: 0px;
+	color: #272e35;
+	background-color:#f1fbff;
+}
+#map{
+	width: 98%;
+}
+#return{
+	float: right;
+	padding-right: 10px;
+	padding-top: 17px;
+	font-size: 12px;
+	height: 34px;
+}
+#return a{
+	color: #272e35;
+}
+h1{
+	font-size: 14px;
+	margin: 0;
+	font-weight: 300;
+	color: #085cbe;
+	float: left;
+	height: 42px;
+	padding-top: 10px;
+	padding-right: 20px;
+}
+h1 a{
+	text-decoration: none;
+}
+#topBar{
+	background-color: rgba(240,240,255,0.7);
+	border-bottom: 1px solid #dfdfdf;
+	background-image: url("gilog.jpg");
+	background-repeat: no-repeat;
+	background-position: 7px 0px;
+	margin: 0;
+	height: 51px;
+	padding-left: 110px;
+}
+#topBarTitle{
+	border-left: 1px solid #dfdfdf;
+	border-right: 1px solid #dfdfdf;
+	border-bottom: 1px solid #dfdfdf;
+	font-size: 14px;
+	margin: 0;
+	font-weight: 300;
+	color: #636363;
+	float: left;
+	height: 41px;
+	padding-top: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: #f1fbff;
+	margin-left: -10px;
+}
+#description{
+	margin-top: 5px;
+	margin-bottom: 8px;
+}
+#key{ 
+	margin-left: 5px; 
+	margin-top: 120px;
+	width: 235px;
+	z-index: 6;
+	background-color: rgba(255,255,255,0.7);
+	border-radius: 5px;
+	padding: 5px;
+	padding-left: 10px;
+	background-image: url("move.png");
+	background-repeat: no-repeat;
+    background-position: 218px 4px; 
+	border: solid 1px #bbc4ce;
+	font-family: Arial, sans-serif; 
+	font-size:11px;
+	overflow: hidden;
+}
+svg{
+	z-index: 1;
+}
+#keyColors{
+	width: 10px;
+	margin-bottom: 5px;
+}
+.keybox{
+	background-color:#e67272; 
+	border-radius: 3px; 
+	border: 1px solid #25383C; 
+	width: 10px; 
+	height: 10px; 
+	margin-top: 4px; 
+}
+.keytext{
+	float: left; 
+	height: 15px; 
+	line-height: 15.9px;
+	padding-left: 16px;
+}
+#keyTitle{
+	margin-top: 5px;
+	margin-bottom: 8px;
+	font-weight: 600;
+}
+#controls{
+	width: 20px;
+	margin-left: 30px;
+	margin-top: 15px;
+	z-index: 7;
+	position:absolute;
+}
+#up{
+	color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	background: rgb(66, 184, 221);
+	text-decoration: none;
+	font-size: 25px;
+	font-weight: 600;
+	width: 40px;
+	text-align: center;
+	float: left;
+	z-index: 7;
+}
+#down{
+	color: white;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+	background: rgb(66, 184, 221);
+	text-decoration: none;
+	font-size: 25px;
+	font-weight: 600;
+	width: 40px;
+	text-align: center;
+	margin-top: 3px;
+	float: left;
+	z-index: 7;
+}
