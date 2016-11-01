@@ -18,6 +18,21 @@ $(document).ready(function(){
 	});
 });
 
+$('#wrapper a').bind('click', function(e){
+		current = $(this).attr("href");
+
+		if($('#hiddenMobileTest').css('float') === 'left'){
+			if(active === current){
+				console.log(active, current);
+			}
+			else{
+				e.preventDefault();
+				console.log(active, current);
+				active = $(this).attr("href");
+			}
+		}
+});
+
 $(window).on('load resize', function () {
   var bH = $('.box').width(),
       tH = $('.tinyBox').width(),
