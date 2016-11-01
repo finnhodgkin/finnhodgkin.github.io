@@ -43,7 +43,7 @@ h3 {margin: 0;padding: 0;font-weight: normal;
 
 
 /*--------------IMAGEBOX---------------*/
-.imageBox{position: relative; width: 0px; height: 0px;z-index: 15; float: left; background-color: #000;}
+.imageBox{position: relative; width: 0px; height: 0px;z-index: 15; float: left;}
 .timage{
 	position: absolute;
 	z-index: 15;
