@@ -1,24 +1,24 @@
-$(document).ready(()=>{
+$(document).ready(function(){
 	var b = function(event) {
 		event.preventDefault();
 		$(this).hasClass("i1") ?
 		$(".ti").fadeIn(300).addClass('active b').removeClass('a'):
 		$(".ti").fadeIn(300).addClass('active a').removeClass('b')
-	}
+	};
 	$('.i1, .i2').click(b);
-	$('.ti').on('click', ()=>{$(".ti").fadeOut(300).removeClass('active')})
+	$('.ti').on('click', function(){$(".ti").fadeOut(300).removeClass('active')});
 	var a = "", c = "";
-	$('#wrapper a').bind('click', (e)=>{
-		c = $(this).attr("href")
+	$('#wrapper a').bind('click', function(e){
+		c = $(this).attr("href");
 		if($('#hiddenMobileTest').css('float') === 'left')
 			if(a !== c){
 				e.preventDefault();
-				a = $(this).attr("href")
+				a = $(this).attr("href");
 			}
 	});
 });
 
-$(window).on('load resize', ()=>{
+$(window).on('load resize', function(){
   var bH = $('.box').width(),
       m = ($('#wrapper').css('margin-left').replace("px", "") / 4) + "px",
       boxM = $('.box').css('margin-left').replace("px", "") * 1;
