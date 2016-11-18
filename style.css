@@ -46,10 +46,12 @@ h3 {margin:0;padding:0;
 	z-index: 15;
 	float: left;
 }
-.ti{
+#ti{
 	position: absolute;
+	background:url('images/morgan.jpg') center center no-repeat #d9dae9; background-size: 100% 100%;
+	transition: all .3s ease;
 	display: none;
-	background:url('morgan.jpg') center center no-repeat #d9dae9; background-size: 100% 100%;
+	opacity: 0;
 }
 .closeTi{
 	text-align:center;
@@ -57,12 +59,16 @@ h3 {margin:0;padding:0;
 	color:#9194a6;
 	font-size:135%;}
 .a{
-	background-image:url('images/morgan.jpg');
+	background-image:url('images/morgan.jpg') !important;
 }
 .b{
-	background-image:url('images/al.jpg')}
+	background-image:url('images/al.jpg') !important
+}
 .active{
-	display: block;
+	display: block !important;
+}
+.display{
+	opacity: 1 !important;
 }
 
 
@@ -137,6 +143,7 @@ h3 {margin:0;padding:0;
 /*----------------CLEAR-AND-MISC--------------------*/
 .clear{	clear: both;margin: 0;padding: 0;}
 a{color: #dee0ff;}
+#hiddenMobileTest{float:right;}
 
 
 /*-----------MOBILE AND SMALLER SCREEN--------------*/
