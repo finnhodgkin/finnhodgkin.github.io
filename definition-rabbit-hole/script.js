@@ -1,22 +1,13 @@
-$(document).ready(function(){
-  $('#searchBox').click(function(){
-        $('#search').focus();
-  });
+window.onload = function() {
 
-  $('#search').focus(function(){
-    $('#searchBox').addClass('hide');
-    $('#searchBar').addClass('searchBarActive');
-    $('.searchWrapper').addClass('searchWrapperActive');
-    $('#random').fadeIn();
-  });
+    var test = "The best meat is served cold: sashimi, steak, oysters, carpacio."
 
-  $('#search').focusout(function(){
-    $('#searchBox').fadeIn();
-    $('#searchBox').removeClass('hide');
-    $('#searchBar').removeClass('searchBarActive');
-    $('.searchWrapper').removeClass('searchWrapperActive');
-    $('#random').fadeOut();
-  });
+    //document.getElementById('results').innerHTML = split(test);
+};
 
-  
-});
+function split (text) {
+  text = text.split(" ");
+  text[0] = "<span>" + text[0];
+  text[text.length - 1] = text[text.length -1] + "</span>";
+  return text.join(" </span><span>");
+}
