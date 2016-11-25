@@ -24,6 +24,19 @@ input[type=text] {
   font-size: 17px;
   margin-bottom: 80px;
 }
+.drop-down-class select {
+  border: 0 !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #778899;
+  width: 100px;
+  text-indent: 1px;
+  text-overflow: "";
+  color: #000000;
+  padding: 5px;
+  box-shadow: 10px 10px 5px #888888;
+  border-radius: 10px;
+}
 
 #results{
   border: 2px solid black;
@@ -47,4 +60,12 @@ span{
 
 .hide{
   display: none;
+}
+
+#new{
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  margin-top: 20px;
+  cursor: pointer;
 }
