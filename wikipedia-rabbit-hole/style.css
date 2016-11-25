@@ -47,6 +47,10 @@ input[type=text] {
   display: inline-block;
   text-align: left;
 }
+
+#results:empty{
+  opacity: 0;
+}
 span{
   cursor: pointer;
 }
