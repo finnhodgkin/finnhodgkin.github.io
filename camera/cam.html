@@ -5,6 +5,8 @@
   <meta charset="utf-8"/>
   <meta name="description" content="Finn Hodgkin | Polaroid">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <link rel="stylesheet" href="style.css"/>
   <link rel="shortcut icon" href="favicon.ico" >
@@ -12,14 +14,17 @@
 </head>
 <body>
   <h1 id="T">Polaroid it.</h1>
-  <input type='file' id='imageFile' name="background-image" /><br/><br/>
+  <label class="fileButton">
+    <input type='file' id='imageFile' name="background-image" />
+    <i class="fa fa-camera fa-2x" aria-hidden="true"></i>
+  </label>
   <div id="resultWrap">
     <div id="results">
       <div id="imageBack">
-        <!--<img id="picture" src="http://www.nationalgeographic.com/content/dam/magazine/rights-exempt/2016/08/departments/panda-mania-12.jpg" width="100%">-->
         <div id="picture"></div>
         <div id="imageFront"></div>
       </div>
+      <input type='text' name="name" placeholder="name me!" id="name" autocomplete="off">
     </div>
   </div>
 </body>
