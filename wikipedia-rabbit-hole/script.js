@@ -32,13 +32,18 @@ function wikipedia (value){
     document.getElementById('results').innerHTML = words.slice(0,-8);
     let spans = document.getElementsByTagName('span');
     for(i = 0; i < spans.length; i++){
-      spans[i].addEventListener('click', function(e){
-        wikipedia(this.innerHTML.toLowerCase().replace(/[^a-z]/g,""))
-      });
+      spans[i].addEventListener('click', addSpans);
     }
    });
 }
-
+function addSpans(){
+    removeEvents(document.getElementsByTagName('span'));
+    wikipedia(this.innerHTML.toLowerCase().replace(/[^a-z]/g,""));
+}
+function removeEvents(item){
+  for(a = 0; a < item.length; a++)
+    if(item[a]) item[a].removeEventListener('click', addSpans);
+}
 function split (text) {
   text = text.split(" ");
   text[0] = "<span>" + text[0];
