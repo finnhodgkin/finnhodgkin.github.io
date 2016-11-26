@@ -18,11 +18,14 @@ function wikipedia (value){
   $.getJSON('https://en.wikipedia.org/w/api.php?action=opensearch&format=json&search=' + value + '&namespace=0&origin=*&limit=5').done(function(wiki) {
     if(wiki[2][0]){
       words = split(wiki[2][0]) + "<br><br>";
-      if(wiki[2][0].includes("may refer to"))
+      if(wiki[2][0].includes("may refer to")){
         for(i = 1; i < wiki.length; i++){
            if(wiki[2][i])words += split(wiki[2][i]) + " <a href='" + wiki[3][i] + "'>(link)</a>" + "<br><br>";
         }
-      else words = words.slice(0,-8) + " <a href='" + wiki[3][i] + "'>(link)</a><br><br>;
+      }
+      else {
+        words = words.slice(0,-8) + " <a href='" + wiki[3][i] + "'>(link)</a><br><br>";
+      }
     }
     else words = "Sorry, there were no matching results for \"" + value + "\"." + "<br><br>";
 
