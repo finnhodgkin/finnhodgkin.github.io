@@ -59,3 +59,11 @@ input[type=text] {
 span{
   cursor: pointer;
 }
+img{
+  -webkit-transition: all 30s ease-in-out;
+  transition: all 30s ease-in-out;
+}
+.anim{
+  -webkit-filter: invert(.8);
+  filter: invert(.8);
+}
