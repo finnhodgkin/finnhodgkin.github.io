@@ -1,4 +1,4 @@
-window.onload = function() {
+document.addEventListener("DOMContentLoaded", function() {
 	//gallery image fadeIN
 	var ti = document.getElementById("ti"),
 	b = function(event) {
@@ -36,7 +36,7 @@ window.onload = function() {
 	boxSizing();
 	setTimeout(boxSizing, 100); //Force IE not to be an idiot
 	window.addEventListener("resize", boxSizing);
-}
+});
 
 var boxSizing = function (){
 	var box = document.getElementsByClassName('box'),
