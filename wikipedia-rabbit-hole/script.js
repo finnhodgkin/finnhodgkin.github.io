@@ -1,16 +1,16 @@
 window.onload = function() {
   //set up space
-    var w = document.getElementById("word"), word = w.value;
-    word = "";
-    //on enter display results
-    w.onkeypress = function(e) {
-        let event = e || window.event,
-            charCode = event.which || event.keyCode;
-        if ( charCode == '13' ){
-          document.getElementById('T').innerHTML = "";
-          wikipedia(w.value);
-        }
-    }
+  var w = document.getElementById("word"), word = w.value;
+  word = "";
+  //on enter display results
+  w.onkeypress = function(e) {
+      let event = e || window.event,
+          charCode = event.which || event.keyCode;
+      if ( charCode == '13' ){
+        document.getElementById('T').innerHTML = "";
+        wikipedia(w.value);
+      }
+  }
 };
 
 function wikipedia (value){
@@ -20,7 +20,7 @@ function wikipedia (value){
       words = split(wiki[2][0]) + "<br><br>";
       if(wiki[2][0].includes("may refer to")){
         for(i = 1; i < wiki.length; i++){
-           if(wiki[2][i])words += split(wiki[2][i]) + " <a href='" + wiki[3][i] + "'>(link)</a>" + "<br><br>";
+          if(wiki[2][i])words += split(wiki[2][i]) + " <a href='" + wiki[3][i] + "'>(link)</a>" + "<br><br>";
         }
       }
       else words = words.slice(0,-8) + " <a href='" + wiki[3][0] + "'>(link)</a><br><br>";
