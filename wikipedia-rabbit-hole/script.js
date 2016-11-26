@@ -24,7 +24,7 @@ function wikipedia (value){
         }
       }
       else {
-        words = words.slice(0,-8) + " <a href='" + wiki[3][i] + "'>(link)</a><br><br>";
+        words = words.slice(0,-8) + " <a href='" + wiki[3][0] + "'>(link)</a><br><br>";
       }
     }
     else words = "Sorry, there were no matching results for \"" + value + "\"." + "<br><br>";
