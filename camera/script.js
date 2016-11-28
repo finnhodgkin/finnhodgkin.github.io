@@ -34,6 +34,15 @@ function readURL(){
         else{animTime--; console.log(animTime)};
       }, 1000);
       document.getElementById('tButton').addEventListener('click',shakeIt);
+
+        var shakeEvent = new Shake({threshold: 15, timeout: 1000});
+        shakeEvent.start();
+        window.addEventListener('shake', shakeIt, false);
+
+        //stop listening
+        function stopShake(){
+            shakeEvent.stop();
+        }
    }
    if(file){
       reader.readAsDataURL(file);
@@ -42,18 +51,20 @@ function readURL(){
 }
 
 function shakeIt(){
-  console.log("Button press");
-var currFilter = getComputedStyle(document.getElementById('picture')).getPropertyValue("filter");
-document.getElementById('picture').className = "",
-shake = "shake";
-document.getElementById('picture').style.filter = currFilter;
-if(animTime <= 5) shake+= ""; else
-if(animTime <= 10){shake += 5; animTime = 5;} else
-if(animTime <= 20){shake += 10; animTime = 10;} else
-if(animTime <= 30){shake += 20; animTime = 20;}
-else              {shake += 30; animTime = 30;}
+  console.log("SHAKE IT LIKE A POLAROID PICTURE");
+  if(animTime > 5){
+    var currFilter = getComputedStyle(document.getElementById('picture')).getPropertyValue("filter");
+    var shake = "shake",
+        current = document.getElementById('picture').className;
+    document.getElementById('picture').className = "";
+    document.getElementById('picture').style.filter = currFilter;
 
-setTimeout(function () {
-  document.getElementById('picture').className = shake;
-},250);
+    setTimeout(function () {
+        if(animTime <= 10){shake += 5; animTime = 5;} else
+        if(animTime <= 20){shake += 10; animTime = 10;} else
+        if(animTime <= 30){shake += 20; animTime = 20;}
+        else              {shake += 30; animTime = 30;}
+        document.getElementById('picture').className = shake;
+    },250);
+  }
 }
