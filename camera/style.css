@@ -133,3 +133,9 @@ span{
   -moz-box-shadow: inset 0px 0px 152px 20px rgba(0,0,0,0.85);
   box-shadow: inset 0px 0px 152px 20px rgba(0,0,0,0.85);
 }
+#shakeTest{
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  margin: 0 auto;
+}
