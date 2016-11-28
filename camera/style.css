@@ -4,7 +4,7 @@ body{
   color: white;
   text-align: center;
   margin-top: 70px;
-  padding-bottom: 100px;
+  margin-bottom: 50px;
 }
 h1{
   font-size: 50px;
@@ -99,12 +99,6 @@ span{
   filter: sepia(20%) brightness(1) opacity(1) blur(0px) invert(0%) !important;
   -webkit-transition: all 60s ease-in-out;
   transition: all 60s ease-in-out;
-}
-.shake5{
-  -webkit-filter: sepia(20%) brightness(1) opacity(1) blur(0px) invert(0%) !important;
-  filter: sepia(20%) brightness(1) opacity(1) blur(0px) invert(0%) !important;
-  -webkit-transition: all 5s ease-in-out !important;
-  transition: all 5s ease-in-out !important;
 }
 .shake10{
   -webkit-filter: sepia(20%) brightness(1) opacity(1) blur(0px) invert(0%) !important;

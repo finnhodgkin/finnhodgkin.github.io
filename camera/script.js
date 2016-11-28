@@ -46,7 +46,7 @@ function readURL(){
     }
 }
 function shakeIt(){
-  if(animTime > 5){
+  if(animTime > 10){
     var currFilter = getComputedStyle(document.getElementById('picture')).getPropertyValue("filter");
     var shake = "shake",
         current = document.getElementById('picture').className;
@@ -54,7 +54,6 @@ function shakeIt(){
     document.getElementById('picture').style.filter = currFilter;
 
     setTimeout(function () {
-        if(animTime <= 10){shake += 5; animTime = 5;} else
         if(animTime <= 20){shake += 10; animTime = 10;} else
         if(animTime <= 30){shake += 20; animTime = 20;}
         else              {shake += 30; animTime = 30;}
