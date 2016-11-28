@@ -33,24 +33,19 @@ function readURL(){
         if(animTime <= 0) clearInterval(timer);
         else{animTime--; console.log(animTime)};
       }, 1000);
-      document.getElementById('tButton').addEventListener('click',shakeIt);
+      //document.getElementById('tButton').addEventListener('click',shakeIt);
+      var shakeEvent = new Shake({threshold: 15, timeout: 1000});
+      shakeEvent.start();
+      window.addEventListener('shake', shakeIt, false);
 
-        var shakeEvent = new Shake({threshold: 15, timeout: 1000});
-        shakeEvent.start();
-        window.addEventListener('shake', shakeIt, false);
-
-        //stop listening
-        function stopShake(){
-            shakeEvent.stop();
-        }
    }
    if(file){
       reader.readAsDataURL(file);
     }else{
     }
 }
-
 function shakeIt(){
+  document.getElementById('shakeTest').style.backgroundColor = "white";
   console.log("SHAKE IT LIKE A POLAROID PICTURE");
   if(animTime > 5){
     var currFilter = getComputedStyle(document.getElementById('picture')).getPropertyValue("filter");
