@@ -97,8 +97,8 @@ span{
 .anim{
   -webkit-filter: sepia(20%) brightness(1) opacity(1) blur(0px) invert(0%) !important;
   filter: sepia(20%) brightness(1) opacity(1) blur(0px) invert(0%) !important;
-  -webkit-transition: all 60s ease-in-out;
-  transition: all 60s ease-in-out;
+  -webkit-transition: all 5s ease-in-out;
+  transition: all 5s ease-in-out;
 }
 .shake10{
   -webkit-filter: sepia(20%) brightness(1) opacity(1) blur(0px) invert(0%) !important;

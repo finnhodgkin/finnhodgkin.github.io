@@ -3,36 +3,68 @@ var filter = "", animTime = 60;
 window.onload = function() {
   var pic = document.getElementById('picture');
   filter = getComputedStyle(document.getElementById('picture')).getPropertyValue("filter");
-  document.getElementById('imageFile').onchange = function (e) {
-    loadImage( //load file using loadimage plugin
-        e.target.files[0],
-        function (img) {
-          img.id = "imageBox"
-          pic.innerHTML = "";
-          pic.appendChild(img);
-          readURL();
-        },
-        {
-          maxWidth: 500,
-          maxHeight: 500,
-          minWidth: 500,
-          minHeight: 500,
-          cover: true
-        }
-    );
-  };
+  if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+    document.getElementById('imageFile').onchange = function (e) {
+      loadImage( //load file using loadimage plugin
+          e.target.files[0],
+          function (img) {
+            img.id = "imageBox";
+            pic.innerHTML = "";
+            pic.appendChild(img);
+            readURL();
+          }
+      );
+    };
+  }
+  else{
+    document.getElementById('imageFile').addEventListener('change', nonMbl, true);
+  }
 }
 
+function nonMbl(){
+   var file = document.getElementById("imageFile").files[0];
+   var reader = new FileReader();
+   reader.onloadend = function(){
+      animTime = 60;
+      document.getElementById('picture').style.backgroundImage = "url(" + reader.result + ")";
+      document.getElementById('picture').className = "reset";
+      document.getElementById('picture').style.filter = filter;
+      setTimeout(function () {
+        document.getElementById('picture').className = "anim";
+      }, 250);
+      var timer = setInterval(function () {
+        if(animTime <= 0) clearInterval(timer);
+        else{animTime--;};
+      }, 1000);
+
+   }
+   if(file){
+      reader.readAsDataURL(file);
+    }else{
+    }
+}
 function readURL(){
   //set up variables
   var pic = document.getElementById('picture'),
       box = document.getElementById('imageBox'),
-      marginH = Math.floor(box.offsetWidth - 500), //horizontal overflow on pic
+      imgW = box.offsetWidth,
+      imgH = box.offsetHeight;
+
+  if(imgW <= imgH){
+    box.style.width = "100%";
+    box.style.height = "auto";
+  }
+  else{
+    box.style.width = "auto";
+    box.style.height = "100%";
+  }
+
+  var marginH = Math.floor(box.offsetWidth - 500), //horizontal overflow on pic
       marginV = Math.floor(box.offsetHeight - 500); //vert. overflow on pic
   if(marginH)
     box.style.marginLeft = "-" + (marginH / 2) + "px"; //if overflow set margin
   if(marginV)
-    box.style.marginLeft = "-" + (marginV / 2) + "px"; //if overflow set margin
+    box.style.marginTop = "-" + (marginV / 2) + "px"; //if overflow set margin
 
   animTime = 60; //reset animation time if new image loaded.
   pic.className = "reset"; //reset animation time
