@@ -1,0 +1,129 @@
+body{
+  background-color: black;
+  font-family: 'Roboto';
+  color: white;
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 50px;
+}
+h1{
+  font-size: 50px;
+  margin-bottom: 50px;
+  opacity: 1;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.red{
+  color: red;
+}
+input[type=file] {
+  display: none;
+}
+
+input[type=text] {
+  width: 100%;
+  border: 0;
+  padding-top: 15px;
+  border-radius: 25px;
+  color: black;
+  font-size: 30px;
+  display: block;
+  outline: 0;
+  text-align: center;
+  font-family: 'Indie Flower', cursive;
+  background-color: transparent;
+}
+.fileButton{
+  background-color: orange;
+  width: 50px;
+  height: 41px;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 25px;
+  padding-top: 9px;
+  margin-bottom: 50px;
+}
+.drop-down-class select {
+  border: 0 !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #778899;
+  width: 100px;
+  text-indent: 1px;
+  text-overflow: "";
+  color: #000000;
+  padding: 5px;
+  box-shadow: 10px 10px 5px #888888;
+  border-radius: 10px;
+}
+
+#results{
+  background-color: white;
+  max-width: 500px;
+  padding: 20px;
+  padding-bottom: 20px;
+  margin: 0 auto;
+  opacity: 1;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  display: inline-block;
+  text-align: left;
+}
+#results:empty{
+  opacity: 0;
+}
+span{
+  cursor: pointer;
+}
+#imageBack{
+  display: inline-block;
+  background-color: #000;
+  overflow: hidden;
+  width: 500px;
+  height: 500px;
+}
+#picture{
+  width: 500px;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  -webkit-filter: sepia(100%) brightness(.2) opacity(0) blur(5px) invert(50%);
+  filter: sepia(100%) brightness(.2) opacity(0) blur(5px) invert(50%);
+}
+.reset{
+  -webkit-transition: all 0s ease-in-out !important;
+  transition: all 0s ease-in-out !important;
+}
+.anim{
+  -webkit-filter: sepia(20%) brightness(1) opacity(1) blur(0px) invert(0%) !important;
+  filter: sepia(20%) brightness(1) opacity(1) blur(0px) invert(0%) !important;
+  -webkit-transition: all 5s ease-in-out;
+  transition: all 5s ease-in-out;
+}
+.shake10{
+  -webkit-filter: sepia(20%) brightness(1) opacity(1) blur(0px) invert(0%) !important;
+  filter: sepia(20%) brightness(1) opacity(1) blur(0px) invert(0%) !important;
+  -webkit-transition: all 10s ease-in-out !important;
+  transition: all 10s ease-in-out !important;
+}
+.shake20{
+  -webkit-filter: sepia(20%) brightness(1) opacity(1) blur(0px) invert(0%) !important;
+  filter: sepia(20%) brightness(1) opacity(1) blur(0px) invert(0%) !important;
+  -webkit-transition: all 20s ease-in-out !important;
+  transition: all 20s ease-in-out !important;
+}
+.shake30{
+  -webkit-filter: sepia(20%) brightness(1) opacity(1) blur(0px) invert(0%) !important;
+  filter: sepia(20%) brightness(1) opacity(1) blur(0px) invert(0%) !important;
+  -webkit-transition: all 30s ease-in-out !important;
+  transition: all 30s ease-in-out !important;
+}
+#imageFront{
+  position: absolute;
+  margin-top:-500px;
+  width: 500px;
+  height: 500px;
+  -webkit-box-shadow: inset 0px 0px 152px 20px rgba(0,0,0,0.85);
+  -moz-box-shadow: inset 0px 0px 152px 20px rgba(0,0,0,0.85);
+  box-shadow: inset 0px 0px 152px 20px rgba(0,0,0,0.85);
+}
