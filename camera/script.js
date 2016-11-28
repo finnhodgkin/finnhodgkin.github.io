@@ -3,21 +3,6 @@ window.onload = function() {
   document.getElementById('imageFile').addEventListener('change', readURL, true);
   filter = getComputedStyle(document.getElementById('picture')).getPropertyValue("filter");
 }
-
-function move() {
-  var elem = document.getElementById("myBar");
-  var width = 0;
-  var id = setInterval(frame, 10);
-  function frame() {
-    if (width == 100) {
-      clearInterval(id);
-    } else {
-      width++;
-      elem.style.width = width + '%';
-    }
-  }
-}
-
 function readURL(){
    var file = document.getElementById("imageFile").files[0];
    var reader = new FileReader();
