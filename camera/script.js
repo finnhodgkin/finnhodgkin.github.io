@@ -31,12 +31,13 @@ function readURL(){
       }, 250);
       var timer = setInterval(function () {
         if(animTime <= 0) clearInterval(timer);
-        else{animTime--; console.log(animTime)};
+        else{animTime--;};
       }, 1000);
-      //document.getElementById('tButton').addEventListener('click',shakeIt);
-      var shakeEvent = new Shake({threshold: 15, timeout: 1000});
-      shakeEvent.start();
-      window.addEventListener('shake', shakeIt, false);
+      if("ondevicemotion" in window){
+        var shakeEvent = new Shake({threshold: 15, timeout: 1000});
+        shakeEvent.start();
+        window.addEventListener('shake', shakeIt, false);
+      }
 
    }
    if(file){
@@ -45,8 +46,6 @@ function readURL(){
     }
 }
 function shakeIt(){
-  document.getElementById('shakeTest').style.backgroundColor = "white";
-  console.log("SHAKE IT LIKE A POLAROID PICTURE");
   if(animTime > 5){
     var currFilter = getComputedStyle(document.getElementById('picture')).getPropertyValue("filter");
     var shake = "shake",
