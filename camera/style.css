@@ -87,8 +87,6 @@ span{
   height: 500px;
   background-size: cover;
   background-position: center;
-  -webkit-transition: all 60s ease-in-out;
-  transition: all 60s ease-in-out;
   -webkit-filter: sepia(100%) brightness(.2) opacity(0) blur(5px) invert(50%);
   filter: sepia(100%) brightness(.2) opacity(0) blur(5px) invert(50%);
 }
@@ -97,8 +95,34 @@ span{
   transition: all 0s ease-in-out !important;
 }
 .anim{
-  -webkit-filter: sepia(0%) brightness(1) opacity(1) blur(0px) invert(0%) !important;
+  -webkit-filter: sepia(20%) brightness(1) opacity(1) blur(0px) invert(0%) !important;
   filter: sepia(20%) brightness(1) opacity(1) blur(0px) invert(0%) !important;
+  -webkit-transition: all 60s ease-in-out;
+  transition: all 60s ease-in-out;
+}
+.shake5{
+  -webkit-filter: sepia(20%) brightness(1) opacity(1) blur(0px) invert(0%) !important;
+  filter: sepia(20%) brightness(1) opacity(1) blur(0px) invert(0%) !important;
+  -webkit-transition: all 5s ease-in-out !important;
+  transition: all 5s ease-in-out !important;
+}
+.shake10{
+  -webkit-filter: sepia(20%) brightness(1) opacity(1) blur(0px) invert(0%) !important;
+  filter: sepia(20%) brightness(1) opacity(1) blur(0px) invert(0%) !important;
+  -webkit-transition: all 10s ease-in-out !important;
+  transition: all 10s ease-in-out !important;
+}
+.shake20{
+  -webkit-filter: sepia(20%) brightness(1) opacity(1) blur(0px) invert(0%) !important;
+  filter: sepia(20%) brightness(1) opacity(1) blur(0px) invert(0%) !important;
+  -webkit-transition: all 20s ease-in-out !important;
+  transition: all 20s ease-in-out !important;
+}
+.shake30{
+  -webkit-filter: sepia(20%) brightness(1) opacity(1) blur(0px) invert(0%) !important;
+  filter: sepia(20%) brightness(1) opacity(1) blur(0px) invert(0%) !important;
+  -webkit-transition: all 30s ease-in-out !important;
+  transition: all 30s ease-in-out !important;
 }
 #imageFront{
   position: absolute;
